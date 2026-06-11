@@ -4,7 +4,7 @@
 
 ---
 
-> This repository provides an **ESP-IDF sample project**. Datasheets and specifications will be added to `docs/` when available.
+> This repository provides **sample projects**, datasheets, specifications, and interface documentation for integration and evaluation.
 
 ## Product overview
 
@@ -25,17 +25,29 @@
 | Path | Contents |
 |:--|:--|
 | `assets/` | Demo screenshots for sample projects (when available) |
-| `docs/` | Datasheets and specifications (**to be added**) |
-| `examples/` | **Sample projects** |
+| `docs/` | Datasheets, specifications, adapter-board schematics |
+| `examples/` | **Sample projects** by category |
 
 ### `examples/` layout
 
-| Location | Description |
+| Location | Description (internal folder name) |
 |:--|:--|
-| `examples/` root | ESP32-S3 + IDF5: CO5300 QSPI + LVGL9 + CST820 touch |
+| `examples/` root | **esp-lvgl-adapter** **LVGL8 / LVGL9** samples, or bringup project |
+| `with-te/` | **屏幕防撕裂代码** (tear-free / TE-aware samples) |
 
 ### Sample project paths
+
+#### Baseline & esp-lvgl-adapter
 
 | Description | Path |
 |:--|:--|
 | CO5300 QSPI bringup (LVGL9) | `examples/esp32s3-1.6-amoled-320x360-qspi-co5300-bringup/` |
+| esp-lvgl-adapter + LVGL8 | `examples/esp32s3-idf5_co5300-qspi_esp-lvgl-adapter_lvgl8/` |
+| esp-lvgl-adapter + LVGL9 | `examples/esp32s3-idf5_co5300-qspi_esp-lvgl-adapter_lvgl9/` |
+
+#### Tear-free samples (`with-te/`)
+
+| Description | Path |
+|:--|:--|
+| esp-lvgl-adapter + LVGL8 + AMOLED, with TE | `examples/with-te/esp32s3-idf5_co5300-qspi_esp-lvgl-adapter_lvgl8_amoled-with-te/` |
+| esp-lvgl-adapter + LVGL9 + AMOLED, with TE | `examples/with-te/esp32s3-idf5_co5300-qspi_esp-lvgl-adapter_lvgl9_amoled-with-te/` |
