@@ -1,53 +1,117 @@
-# 1.6 寸 320×360 AMOLED QSPI 模组（CO5300）资料与示例
+<p align="left"><img alt="OSPTEK" src="./images/logo.png" width="200" /></p>
 
-**English：** [`README_EN.md`](README_EN.md)
+<h1 align="center">OSPTEK 1.6″ AMOLED 320×360（CO5300 · QSPI）</h1>
+
+<p align="center"><b>AMOLED 模组 · QSPI · CO5300</b></p>
+
+<p align="center"><a href="./README_EN.md">English</a> | 简体中文</p>
+
+<p align="center">
+  <img alt="Size: 1.6 inch" src="https://img.shields.io/badge/Size-1.6%22-3498DB?style=flat-square" />
+  <img alt="Resolution: 320x360" src="https://img.shields.io/badge/Resolution-320%C3%97360-8E44AD?style=flat-square" />
+  <img alt="Interface: QSPI" src="https://img.shields.io/badge/Interface-QSPI-27AE60?style=flat-square" />
+  <img alt="Driver: CO5300" src="https://img.shields.io/badge/Driver-CO5300-E7352C?style=flat-square" />
+</p>
+
+<p align="center"><img alt="OSPTEK 1.6 寸 320×360 AMOLED QSPI 模组（CO5300）宣传图" src="./images/product.png" width="640" /></p>
+
+## 目录
+
+- [产品简介](#产品简介)
+- [规格参数](#规格参数)
+- [示例工程](#示例工程)
+- [仓库结构](#仓库结构)
+- [相关资料](#相关资料)
+- [购买链接](#购买链接)
+- [技术支持](#技术支持)
 
 ---
 
-> 本仓库提供该模组的 **示例工程**，以及数据手册、规格与接口说明等资料，便于选型参考与集成开发。
+## 产品简介
 
-## 产品概要
+OSPTEK **1.6 寸 320×360 AMOLED** 是一款 **QSPI** 接口彩色显示模组，显示驱动为 **CO5300**，触摸驱动为 **CST820**。适合穿戴、手持终端与紧凑 HMI 等场景。
 
-| 项目 | 说明 |
-|:--|:--|
-| 模组规格 | 1.6 英寸 **AMOLED**，分辨率 **320×360** |
-| 接口 | **QSPI** |
-| 驱动芯片 | **CO5300** |
-| 规格标识 | 产品资料中常用 **`1.6-amoled-320x360-qspi-co5300`** 表示本规格 |
-| 同尺寸其他规格 | 1.6″ **480×480** 见 **`1.6-amoled-480x480-qspi-ch13613`**（CH13613 QSPI）、**`1.6-amoled-480x480-mipi-st7802`**（ST7802 MIPI），分辨率与驱动不同、独立维护 |
+规格标识（仓库名）：`1.6-amoled-320x360-qspi-co5300`
 
----
+当前模组版本：**AM160Q320360ZS**。电气与外形细节以 [`docs/AM_160_Q320360_ZS_c0ecd5a79a.pdf`](./docs/AM_160_Q320360_ZS_c0ecd5a79a.pdf) 为准。
+
+## 规格参数
+
+| 项目 | 规格 |
+| ---- | ---- |
+| 尺寸 | 1.6 英寸 |
+| 类型 | AMOLED（彩色） |
+| 分辨率 | 320×360 |
+| 接口 | QSPI |
+| 驱动 IC | CO5300 |
+| 触摸驱动 | CST820 |
+
+> 完整外形尺寸、FPC 定义、供电与时序以产品规格书 / 驱动手册为准。
+
+## 示例工程
+
+| 说明 | 路径 |
+| ---- | ---- |
+| ESP32-S3 · CO5300 QSPI bringup（LVGL9） | [`examples/esp32s3-1.6-amoled-320x360-qspi-co5300-bringup/`](./examples/esp32s3-1.6-amoled-320x360-qspi-co5300-bringup/) |
+| ESP32-S3 · CO5300 QSPI + esp-lvgl-adapter / LVGL8 | [`examples/esp32s3-idf5_co5300-qspi_esp-lvgl-adapter_lvgl8/`](./examples/esp32s3-idf5_co5300-qspi_esp-lvgl-adapter_lvgl8/) |
+| ESP32-S3 · CO5300 QSPI + esp-lvgl-adapter / LVGL9 | [`examples/esp32s3-idf5_co5300-qspi_esp-lvgl-adapter_lvgl9/`](./examples/esp32s3-idf5_co5300-qspi_esp-lvgl-adapter_lvgl9/) |
+| ESP32-S3 · LVGL8 + TE 防撕裂 | [`examples/with-te/esp32s3-idf5_co5300-qspi_esp-lvgl-adapter_lvgl8_amoled-with-te/`](./examples/with-te/esp32s3-idf5_co5300-qspi_esp-lvgl-adapter_lvgl8_amoled-with-te/) |
+| ESP32-S3 · LVGL9 + TE 防撕裂 | [`examples/with-te/esp32s3-idf5_co5300-qspi_esp-lvgl-adapter_lvgl9_amoled-with-te/`](./examples/with-te/esp32s3-idf5_co5300-qspi_esp-lvgl-adapter_lvgl9_amoled-with-te/) |
 
 ## 仓库结构
 
-### 顶层目录
+```text
+1.6-amoled-320x360-qspi-co5300/
+├── README.md
+├── README_EN.md
+├── MODULE_VERSION.md
+├── LICENSE
+├── images/          # README 用图
+├── docs/            # 规格书、驱动手册、转接板等
+└── examples/        # 示例工程
+```
 
-| 路径 | 说明 |
-|:--|:--|
-| `assets/` | 示例工程 Demo 效果图片（有则放置） |
-| `docs/` | 数据手册、规格说明、转接板原理图 |
-| `examples/` | 按功能分类的 **示例工程** |
+## 相关资料
 
-### `examples/` 分类
+### 本产品资料
 
-| 分类 | 说明（对应内部资料目录） |
-|:--|:--|
-| `examples/` 根目录 | **esp-lvgl-adapter** 的 **LVGL8 / LVGL9** 示例，或 bringup 工程 |
-| `with-te/` | **屏幕防撕裂代码** |
+| 资料 | 链接 |
+| ---- | ---- |
+| 产品规格书（AM160Q320360ZS） | [`docs/AM_160_Q320360_ZS_c0ecd5a79a.pdf`](./docs/AM_160_Q320360_ZS_c0ecd5a79a.pdf) |
+| 驱动 IC 数据手册（CO5300） | [`docs/CO_5300_Datasheet_V0_00_20230328_07edb82936.pdf`](./docs/CO_5300_Datasheet_V0_00_20230328_07edb82936.pdf) |
+| 触摸 IC 数据手册（CST820） | [`docs/DS_CST_820_V1_2_e0543732ca.pdf`](./docs/DS_CST_820_V1_2_e0543732ca.pdf) |
+| 转接板原理图 | [`docs/1.6寸屏幕转接板_AM160Q320360ZS.pdf`](./docs/1.6%E5%AF%B8%E5%B1%8F%E5%B9%95%E8%BD%AC%E6%8E%A5%E6%9D%BF_AM160Q320360ZS.pdf) |
 
-### 示例工程路径
+### 示例工程
 
-#### 基础与 esp-lvgl-adapter
+- [ESP32-S3 CO5300 QSPI bringup](./examples/esp32s3-1.6-amoled-320x360-qspi-co5300-bringup/)
+- [ESP32-S3 CO5300 QSPI + LVGL8](./examples/esp32s3-idf5_co5300-qspi_esp-lvgl-adapter_lvgl8/)
+- [ESP32-S3 CO5300 QSPI + LVGL9](./examples/esp32s3-idf5_co5300-qspi_esp-lvgl-adapter_lvgl9/)
+- [ESP32-S3 LVGL8 + TE](./examples/with-te/esp32s3-idf5_co5300-qspi_esp-lvgl-adapter_lvgl8_amoled-with-te/)
+- [ESP32-S3 LVGL9 + TE](./examples/with-te/esp32s3-idf5_co5300-qspi_esp-lvgl-adapter_lvgl9_amoled-with-te/)
 
-| 说明 | 路径 |
-|:--|:--|
-| CO5300 QSPI bringup（LVGL9） | `examples/esp32s3-1.6-amoled-320x360-qspi-co5300-bringup/` |
-| esp-lvgl-adapter + LVGL8 | `examples/esp32s3-idf5_co5300-qspi_esp-lvgl-adapter_lvgl8/` |
-| esp-lvgl-adapter + LVGL9 | `examples/esp32s3-idf5_co5300-qspi_esp-lvgl-adapter_lvgl9/` |
+## 购买链接
 
-#### 屏幕防撕裂代码（`with-te/`）
+<p align="center">
+  <a href="https://shop110742373.taobao.com/"><img alt="淘宝官方店铺" src="https://img.shields.io/badge/淘宝-官方店铺-FF6A00?style=for-the-badge" /></a>
+  &nbsp;&nbsp;
+  <a href="https://www.aliexpress.com/store/1105701619"><img alt="速卖通官方店铺" src="https://img.shields.io/badge/速卖通-官方店铺-FF6A00?style=for-the-badge" /></a>
+</p>
 
-| 说明 | 路径 |
-|:--|:--|
-| esp-lvgl-adapter + LVGL8 + AMOLED，含 TE | `examples/with-te/esp32s3-idf5_co5300-qspi_esp-lvgl-adapter_lvgl8_amoled-with-te/` |
-| esp-lvgl-adapter + LVGL9 + AMOLED，含 TE | `examples/with-te/esp32s3-idf5_co5300-qspi_esp-lvgl-adapter_lvgl9_amoled-with-te/` |
+**国内（淘宝）**
+
+- 店铺：[鱼鹰光电工厂店](https://shop110742373.taobao.com/)
+
+**海外（AliExpress）**
+
+- 店铺：[OSPTEK Official Store](https://www.aliexpress.com/store/1105701619)
+
+## 技术支持
+
+- 技术支持 / 产品咨询：<luyu@osptek.com>
+- QQ 技术交流群：**985881096**
+- 公司官网：<https://osptek.com/>
+
+---
+
+<p align="center"><sub>© 2026 OSPTEK 鱼鹰光电 · 本仓库资料采用 CC BY 4.0 许可</sub></p>

@@ -1,53 +1,117 @@
-# 1.6" 320×360 AMOLED QSPI module (CO5300) — documentation & samples
+<p align="left"><img alt="OSPTEK" src="./images/logo.png" width="200" /></p>
 
-**简体中文：** [`README.md`](README.md)
+<h1 align="center">OSPTEK 1.6″ AMOLED 320×360 (CO5300 · QSPI)</h1>
+
+<p align="center"><b>AMOLED module · QSPI · CO5300</b></p>
+
+<p align="center"><a href="./README.md">简体中文</a> | English</p>
+
+<p align="center">
+  <img alt="Size: 1.6 inch" src="https://img.shields.io/badge/Size-1.6%22-3498DB?style=flat-square" />
+  <img alt="Resolution: 320x360" src="https://img.shields.io/badge/Resolution-320%C3%97360-8E44AD?style=flat-square" />
+  <img alt="Interface: QSPI" src="https://img.shields.io/badge/Interface-QSPI-27AE60?style=flat-square" />
+  <img alt="Driver: CO5300" src="https://img.shields.io/badge/Driver-CO5300-E7352C?style=flat-square" />
+</p>
+
+<p align="center"><img alt="OSPTEK 1.6&quot; 320×360 AMOLED QSPI module (CO5300) product image" src="./images/product.png" width="640" /></p>
+
+## Contents
+
+- [Overview](#overview)
+- [Specifications](#specifications)
+- [Sample projects](#sample-projects)
+- [Repository layout](#repository-layout)
+- [Resources](#resources)
+- [Buy](#buy)
+- [Support](#support)
 
 ---
 
-> This repository provides **sample projects**, datasheets, specifications, and interface documentation for integration and evaluation.
+## Overview
 
-## Product overview
+OSPTEK **1.6″ 320×360 AMOLED** is a **QSPI** color display module driven by **CO5300**, with touch controller **CST820**. It suits wearables, handheld terminals, and compact HMI.
 
-| Item | Description |
-|:--|:--|
-| Module | 1.6-inch **AMOLED** panel, **320×360** resolution |
-| Interface | **QSPI** |
-| Driver IC | **CO5300** |
-| Spec ID | **`1.6-amoled-320x360-qspi-co5300`** is the common product designation in documentation |
-| Other 1.6″ variants | **480×480** modules: **`1.6-amoled-480x480-qspi-ch13613`** (CH13613 QSPI), **`1.6-amoled-480x480-mipi-st7802`** (ST7802 MIPI) — separate repos |
+Spec ID (repository name): `1.6-amoled-320x360-qspi-co5300`
 
----
+Current module version: **AM160Q320360ZS**. Electrical and mechanical details follow [`docs/AM_160_Q320360_ZS_c0ecd5a79a.pdf`](./docs/AM_160_Q320360_ZS_c0ecd5a79a.pdf).
+
+## Specifications
+
+| Item | Spec |
+| ---- | ---- |
+| Size | 1.6 inch |
+| Type | AMOLED (color) |
+| Resolution | 320×360 |
+| Interface | QSPI |
+| Driver IC | CO5300 |
+| Touch IC | CST820 |
+
+> Full outline, FPC definition, power, and timing follow the product datasheet / driver IC datasheet.
+
+## Sample projects
+
+| Description | Path |
+| ---- | ---- |
+| ESP32-S3 · CO5300 QSPI bringup (LVGL9) | [`examples/esp32s3-1.6-amoled-320x360-qspi-co5300-bringup/`](./examples/esp32s3-1.6-amoled-320x360-qspi-co5300-bringup/) |
+| ESP32-S3 · CO5300 QSPI + esp-lvgl-adapter / LVGL8 | [`examples/esp32s3-idf5_co5300-qspi_esp-lvgl-adapter_lvgl8/`](./examples/esp32s3-idf5_co5300-qspi_esp-lvgl-adapter_lvgl8/) |
+| ESP32-S3 · CO5300 QSPI + esp-lvgl-adapter / LVGL9 | [`examples/esp32s3-idf5_co5300-qspi_esp-lvgl-adapter_lvgl9/`](./examples/esp32s3-idf5_co5300-qspi_esp-lvgl-adapter_lvgl9/) |
+| ESP32-S3 · LVGL8 + TE | [`examples/with-te/esp32s3-idf5_co5300-qspi_esp-lvgl-adapter_lvgl8_amoled-with-te/`](./examples/with-te/esp32s3-idf5_co5300-qspi_esp-lvgl-adapter_lvgl8_amoled-with-te/) |
+| ESP32-S3 · LVGL9 + TE | [`examples/with-te/esp32s3-idf5_co5300-qspi_esp-lvgl-adapter_lvgl9_amoled-with-te/`](./examples/with-te/esp32s3-idf5_co5300-qspi_esp-lvgl-adapter_lvgl9_amoled-with-te/) |
 
 ## Repository layout
 
-### Top-level
+```text
+1.6-amoled-320x360-qspi-co5300/
+├── README.md
+├── README_EN.md
+├── MODULE_VERSION.md
+├── LICENSE
+├── images/          # README assets
+├── docs/            # datasheets, adapter schematic
+└── examples/        # sample projects
+```
 
-| Path | Contents |
-|:--|:--|
-| `assets/` | Demo screenshots for sample projects (when available) |
-| `docs/` | Datasheets, specifications, adapter-board schematics |
-| `examples/` | **Sample projects** by category |
+## Resources
 
-### `examples/` layout
+### Product files
 
-| Location | Description (internal folder name) |
-|:--|:--|
-| `examples/` root | **esp-lvgl-adapter** **LVGL8 / LVGL9** samples, or bringup project |
-| `with-te/` | **屏幕防撕裂代码** (tear-free / TE-aware samples) |
+| Resource | Link |
+| ---- | ---- |
+| Product datasheet (AM160Q320360ZS) | [`docs/AM_160_Q320360_ZS_c0ecd5a79a.pdf`](./docs/AM_160_Q320360_ZS_c0ecd5a79a.pdf) |
+| Driver IC datasheet (CO5300) | [`docs/CO_5300_Datasheet_V0_00_20230328_07edb82936.pdf`](./docs/CO_5300_Datasheet_V0_00_20230328_07edb82936.pdf) |
+| Touch IC datasheet (CST820) | [`docs/DS_CST_820_V1_2_e0543732ca.pdf`](./docs/DS_CST_820_V1_2_e0543732ca.pdf) |
+| Adapter schematic | [`docs/1.6寸屏幕转接板_AM160Q320360ZS.pdf`](./docs/1.6%E5%AF%B8%E5%B1%8F%E5%B9%95%E8%BD%AC%E6%8E%A5%E6%9D%BF_AM160Q320360ZS.pdf) |
 
-### Sample project paths
+### Samples
 
-#### Baseline & esp-lvgl-adapter
+- [ESP32-S3 CO5300 QSPI bringup](./examples/esp32s3-1.6-amoled-320x360-qspi-co5300-bringup/)
+- [ESP32-S3 CO5300 QSPI + LVGL8](./examples/esp32s3-idf5_co5300-qspi_esp-lvgl-adapter_lvgl8/)
+- [ESP32-S3 CO5300 QSPI + LVGL9](./examples/esp32s3-idf5_co5300-qspi_esp-lvgl-adapter_lvgl9/)
+- [ESP32-S3 LVGL8 + TE](./examples/with-te/esp32s3-idf5_co5300-qspi_esp-lvgl-adapter_lvgl8_amoled-with-te/)
+- [ESP32-S3 LVGL9 + TE](./examples/with-te/esp32s3-idf5_co5300-qspi_esp-lvgl-adapter_lvgl9_amoled-with-te/)
 
-| Description | Path |
-|:--|:--|
-| CO5300 QSPI bringup (LVGL9) | `examples/esp32s3-1.6-amoled-320x360-qspi-co5300-bringup/` |
-| esp-lvgl-adapter + LVGL8 | `examples/esp32s3-idf5_co5300-qspi_esp-lvgl-adapter_lvgl8/` |
-| esp-lvgl-adapter + LVGL9 | `examples/esp32s3-idf5_co5300-qspi_esp-lvgl-adapter_lvgl9/` |
+## Buy
 
-#### Tear-free samples (`with-te/`)
+<p align="center">
+  <a href="https://www.aliexpress.com/store/1105701619"><img alt="AliExpress store" src="https://img.shields.io/badge/AliExpress-Official_Store-FF6A00?style=for-the-badge" /></a>
+  &nbsp;&nbsp;
+  <a href="https://shop110742373.taobao.com/"><img alt="Taobao store" src="https://img.shields.io/badge/Taobao-Official_Store-FF6A00?style=for-the-badge" /></a>
+</p>
 
-| Description | Path |
-|:--|:--|
-| esp-lvgl-adapter + LVGL8 + AMOLED, with TE | `examples/with-te/esp32s3-idf5_co5300-qspi_esp-lvgl-adapter_lvgl8_amoled-with-te/` |
-| esp-lvgl-adapter + LVGL9 + AMOLED, with TE | `examples/with-te/esp32s3-idf5_co5300-qspi_esp-lvgl-adapter_lvgl9_amoled-with-te/` |
+**Overseas (AliExpress)**
+
+- Store: [OSPTEK Official Store](https://www.aliexpress.com/store/1105701619)
+
+**China (Taobao)**
+
+- Store: [鱼鹰光电工厂店](https://shop110742373.taobao.com/)
+
+## Support
+
+- Technical support / product inquiry: <luyu@osptek.com>
+- QQ group (China): **985881096**
+- Website: <https://osptek.com/>
+
+---
+
+<p align="center"><sub>© 2026 OSPTEK · Materials in this repository are licensed under CC BY 4.0</sub></p>
