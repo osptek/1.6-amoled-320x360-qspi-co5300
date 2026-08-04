@@ -111,6 +111,7 @@ Current module version: **AM160Q320360ZS**. Electrical and mechanical details fo
 - Technical support / product inquiry: <luyu@osptek.com>
 - QQ group (China): **985881096**
 - Website: <https://osptek.com/>
+- For questions or problems, you can also open a GitHub [Issue](https://github.com/osptek/1.6-amoled-320x360-qspi-co5300/issues)
 
 ---
 
