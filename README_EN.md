@@ -47,6 +47,7 @@ Repo id: `1.6-amoled-320x360-qspi-co5300`
 <p align="center"><img alt="AM160Q320360ZS" src="./images/AM160Q320360ZS.png" width="320" /></p>
 
 **Notes:** With touch (CST820).
+
 ---
 
 ## How to Switch Branches
